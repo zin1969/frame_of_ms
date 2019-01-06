@@ -1,0 +1,16 @@
+- name: "install ClamAV and dependencies"
+  yum:
+    name:
+      - clamav-server
+      - clamav-data
+      - clamav-update
+      - clamav-filesystem
+      - clamav
+      - clamav-scanner
+      - clamav-scanner-systemd
+      - clamav-devel
+      - clamav-lib
+      - clamav-server-systemd
+    enablerepo: epel
+  become: true
+# https://www.server-memo.net/server-setting/clamav/epel-clamav-install.html

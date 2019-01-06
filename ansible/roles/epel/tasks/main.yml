@@ -1,0 +1,4 @@
+- name: "install EPEL (Extra Packages for Enterprise Linux)"
+  yum:
+    name: epel-release
+  become: yes

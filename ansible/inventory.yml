@@ -1,0 +1,4 @@
+all:
+    hosts:
+        frame_of_ms:
+            ansible_host: localhost

@@ -1,0 +1,25 @@
+- name: "install docker and docker-compose"
+  get_url:
+    url: https://get.docker.com
+    dest: /vagrant/get-docker.sh
+    mode: 0755
+- name: install docker
+  command: /vagrant/get-docker.sh
+- name: add into docker present user
+  user:
+    name: vagrant
+    groups: docker
+    append: yes
+  become: true
+- name: start docker daemon
+  systemd:
+    state: started
+    name: docker
+    enabled: yes
+  become: true
+- name: install docker-compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.23.2/docker-compose-Linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    mode: 0755
+  become: true

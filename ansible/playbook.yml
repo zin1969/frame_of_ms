@@ -1,0 +1,10 @@
+---
+- hosts: frame_of_ms
+  user: vagrant
+  gather_facts: no
+  connection: local
+  roles:
+    - epel
+    - clamav
+    - docker
+# http://docs.ansible.com/ansible/latest/modules/file_module.html#file-module

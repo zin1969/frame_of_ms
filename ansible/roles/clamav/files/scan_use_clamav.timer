@@ -1,0 +1,8 @@
+[Unit]
+Description=clamav scan all files on boot
+
+[Timer]
+OnBootSec=1min
+
+[Install]
+WantedBy=timers.target
